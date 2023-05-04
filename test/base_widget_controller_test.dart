@@ -1,12 +1,27 @@
-// import 'package:flutter_test/flutter_test.dart';
+import 'package:base_widget_controller/enum/widget_state.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-// import 'package:base_widget_controller/base_widget_controller.dart';
+import 'package:base_widget_controller/base_widget_controller.dart';
 
-// void main() {
-//   test('adds one to input values', () {
-//     final calculator = Calculator();
-//     expect(calculator.addOne(2), 3);
-//     expect(calculator.addOne(-7), -6);
-//     expect(calculator.addOne(0), 1);
-//   });
-// }
+class IntCtrl extends BaseWidgetController<int> {
+  IntCtrl({required super.initialValue});
+}
+
+void main() {
+  late IntCtrl ctrl;
+
+  setUpAll(() {
+    ctrl = IntCtrl(initialValue: 0);
+  });
+  test('some tests', () {
+    expect(ctrl.widgetState, WidgetState.loading);
+    expect(ctrl.currentValue, 0);
+    ctrl.changeValue(1);
+    expect(ctrl.currentValue, 0);
+    ctrl.changeWidgetSate(WidgetState.ready);
+    expect(ctrl.widgetState, WidgetState.ready);
+    expect(ctrl.currentValue, 1);
+    ctrl.changeValue(2);
+    expect(ctrl.currentValue, 2);
+  });
+}
