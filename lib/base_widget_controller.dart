@@ -27,7 +27,7 @@ abstract class BaseWidgetController<T> {
 
   @mustCallSuper
   BaseWidgetController({required T initialValue}) {
-    _currentVariable.value = initialValue;
+    _currentVariable = Rv<T>(initialValue);
     listenForWidgetState((state) {
       _widgetState = state;
       if (state == WidgetState.ready && _lastVariable != null) {
