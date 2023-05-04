@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:base_widget_controller/enum/widget_state.dart';
 import 'package:flutter/material.dart';
-import 'package:reactive_variables/variable.dart';
+import 'package:reactive_variables/reactive_variables.dart';
 
 /// Базовый класс для создания контроллеров к виджетам, способным обновлять своё состояние самостоятельно.
 abstract class BaseWidgetController<T> {
