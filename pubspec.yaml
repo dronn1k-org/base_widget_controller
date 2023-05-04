@@ -1,6 +1,6 @@
 name: base_widget_controller
 description: A new Flutter package project.
-version: 0.0.1
+version: 0.0.1+1
 publish_to: none
 # homepage:
 
@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   reactive_variables:
-    version: ^0.0.1
+    version: ^0.0.4
     git:
       url: git@github.com:dronn1k-org/reactive_variables.git
       ref: master
