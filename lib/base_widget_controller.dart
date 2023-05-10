@@ -46,12 +46,14 @@ abstract class BaseWidgetController<T> {
   void changeWidgetSate(WidgetState state) => _widgetStateStreamCtrl.add(state);
 
   /// Изменяет значение контроллера
-  void changeValue(T newValue) {
+  void changeValue(T newValue, [bool shouldTrigger = false]) {
     if (!isWidgetReady) {
       _lastVariable = newValue;
       return;
     }
-    _currentVariable.trigger(newValue);
+    shouldTrigger
+        ? _currentVariable.trigger(newValue)
+        : _currentVariable(newValue);
   }
 
   StreamSubscription<WidgetState> listenForWidgetState(
