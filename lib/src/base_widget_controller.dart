@@ -17,7 +17,7 @@ abstract base class BaseWidgetController<T> {
   Rv<T> get reactive => _currentVariable;
 
   /// Текущее значение контроллера
-  T get currentValue => _currentVariable.value;
+  T get currentState => _currentVariable.value;
 
   BaseWidgetController({required T initialValue}) {
     _currentVariable = Rv<T>(initialValue);

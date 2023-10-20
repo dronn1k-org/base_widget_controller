@@ -2,12 +2,12 @@ part of '../reactive_widget_controller.dart';
 
 class RWCObserver<T> extends StatefulWidget {
   final BaseWidgetController<T> controller;
-  final Widget child;
+  final Widget Function(BuildContext context, T state) builder;
 
   const RWCObserver({
     super.key,
     required this.controller,
-    required this.child,
+    required this.builder,
   });
 
   @override
@@ -35,6 +35,6 @@ class _RWCObserverState<T> extends State<RWCObserver<T>> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.child;
+    return widget.builder(context, widget.controller.currentState);
   }
 }
